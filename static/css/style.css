@@ -39,7 +39,7 @@ body{
     background:#ffffff;
 }
 
-.hero-section img{
+.hero-section, .about-hero-section img{
 
     animation: floatImage 5s ease-in-out infinite;
 
@@ -395,4 +395,8 @@ body{
 .reveal.active{
     opacity:1;
     transform:translateY(0);
+}
+
+.about-hero-section{
+    background:#ffffff;
 }

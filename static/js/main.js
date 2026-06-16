@@ -1,20 +1,20 @@
-const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
+const observer = new IntersectionObserver((entries) => {
 
-    reveals.forEach((section) => {
+    entries.forEach((entry) => {
 
-        const windowHeight = window.innerHeight;
+        if (entry.isIntersecting) {
 
-        const revealTop =
-            section.getBoundingClientRect().top;
-
-        if(revealTop < windowHeight - 100){
-
-            section.classList.add("active");
+            entry.target.classList.add("active");
 
         }
 
     });
 
+},{
+    threshold: 0.1
+});
+
+document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
 });

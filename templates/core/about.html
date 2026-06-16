@@ -1,8 +1,71 @@
 {% extends 'base.html' %}
 
+{% block title %}
+About Us | Ashurya Technologies
+{% endblock %}
+
 {% block content %}
-<div class="container py-5">
-    <h1>About Ashurya Technologies</h1>
-    <p>This page is rendering from a template.</p>
-</div>
+
+<section class="about-hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-6">
+
+                <span class="hero-tag">
+                    About Ashurya Technologies
+                </span>
+
+                <h1 class="hero-title">
+                    Building Digital Solutions
+                    For Modern Businesses
+                </h1>
+
+                <p class="hero-description">
+
+                    Ashurya Technologies helps businesses,
+                    startups, and organizations transform
+                    ideas into scalable digital products,
+                    from websites and web applications
+                    to AI solutions and business software.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="/contact/"
+                       class="btn btn-primary btn-lg">
+
+                        Start Your Project
+
+                    </a>
+
+                    <a href="/services/"
+                       class="btn btn-outline-dark btn-lg">
+
+                        Explore Services
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692"
+                    class="img-fluid rounded-4 shadow"
+                    alt="About Ashurya Technologies">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 {% endblock %}
