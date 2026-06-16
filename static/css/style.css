@@ -400,3 +400,150 @@ body{
 .about-hero-section{
     background:#ffffff;
 }
+
+.who-we-are{
+    background:#f8fafc;
+}
+
+.about-text{
+    color:var(--text);
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.mission-vision{
+    background:#ffffff;
+}
+
+.mission-card,
+.vision-card{
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    height:100%;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    transition:all .3s ease;
+}
+
+.mission-card:hover,
+.vision-card:hover{
+    transform:translateY(-10px);
+}
+
+.mission-icon i,
+.vision-icon i{
+    font-size:3rem;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.mission-card h3,
+.vision-card h3{
+    color:var(--dark);
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.mission-card p,
+.vision-card p{
+    color:var(--text);
+    line-height:1.8;
+}
+
+
+.what-we-build{
+    background:#f8fafc;
+}
+
+.build-card{
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    height:100%;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    transition:all .3s ease;
+}
+
+.build-card:hover{
+    transform:translateY(-10px);
+}
+
+.build-card i{
+    font-size:3rem;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.build-card h4{
+    color:var(--dark);
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.build-card p{
+    color:var(--text);
+    line-height:1.8;
+}
+
+.contact-card {
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Inputs */
+.custom-input {
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    padding: 12px 14px;
+    font-size: 15px;
+    transition: 0.3s;
+    background: #fff;
+}
+
+.custom-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.15);
+}
+
+/* Button polish */
+.btn-primary {
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+/* Section spacing refinement */
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+.icon-badge {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37,99,235,0.1);
+    color: #2563eb;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#btnText {
+    transition: 0.2s;
+}
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

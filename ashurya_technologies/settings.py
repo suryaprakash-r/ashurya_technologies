@@ -131,3 +131,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 ADMIN_SITE_HEADER = "Ashurya Technologies Administration"
 ADMIN_SITE_TITLE = "Ashurya Technologies"
 ADMIN_INDEX_TITLE = "Welcome to Ashurya Technologies"
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "r.suryaprakash0800@gmail.com"
+EMAIL_HOST_PASSWORD = "ensl xwdo jpvp lpqr" 

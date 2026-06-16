@@ -1,5 +1,280 @@
 {% extends 'base.html' %}
 
+{% block title %}
+Contact | Ashurya Technologies
+{% endblock %}
+
 {% block content %}
-<h2>Home Page</h2>
+
+<!-- HERO SECTION -->
+<section class="about-hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-6">
+
+                <span class="hero-tag">
+                    Contact Us
+                </span>
+
+                <h1 class="hero-title">
+                    Let’s Build Something
+                    Amazing Together
+                </h1>
+
+                <p class="hero-description">
+
+                    Have an idea, project, or business requirement?
+                    We’re here to help you transform it into a scalable digital solution
+                    using modern technologies and DevOps practices.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#contact-form" class="btn btn-primary btn-lg">
+                        Send Message
+                    </a>
+
+                    <a href="/services/" class="btn btn-outline-dark btn-lg">
+                        View Services
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                    class="img-fluid rounded-4 shadow" alt="Contact Ashurya Technologies">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact-form" class="py-5 reveal">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                Get In Touch
+            </span>
+
+            <h2 class="section-title">
+                Tell Us About Your Project
+            </h2>
+
+            <p class="section-description">
+                Fill out the form below and our team will get back to you soon.
+            </p>
+
+        </div>
+
+        <div class="row g-5">
+
+            <!-- CONTACT FORM -->
+            <div class="col-lg-7">
+
+                <div class="p-4 p-md-5 rounded-4 shadow-sm bg-white border contact-card">
+
+                    <h3 class="section-title mb-3">
+                        Send Us a Message
+                    </h3>
+
+                    <p class="text-muted mb-4">
+                        Fill out the form and we’ll get back to you within 24 hours.
+                    </p>
+
+                    <form id="contactForm" method="POST">
+                        {% csrf_token %}
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control custom-input" minlength="3"
+                                    placeholder="Your Name" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="email" name="email" class="form-control custom-input"
+                                    placeholder="Your Email" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="number" name="phone" class="form-control custom-input"
+                                    placeholder="Phone Number" pattern="[0-9]{10}" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <select name="service" class="form-control custom-input" required>
+                                    <option value="">Select Service</option>
+                                    <option value="website">Website Development</option>
+                                    <option value="webapp">Web Application</option>
+                                    <option value="mobile">Mobile Application</option>
+                                    <option value="billing">Billing Software</option>
+                                    <option value="ai">AI Solution</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <textarea name="message" rows="6" class="form-control custom-input"
+                                    placeholder="Your Message" required></textarea>
+                            </div>
+
+                            <div class="col-12 text-end">
+                                <button type="submit" id="submitBtn" class="btn btn-primary btn-lg px-4">
+
+                                    <span id="btnText">Send Message</span>
+
+                                    <span id="btnSpinner" class="spinner-border spinner-border-sm ms-2 d-none"
+                                        role="status"></span>
+
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <!-- SUCCESS TOAST -->
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
+
+                <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert">
+
+                    <div class="d-flex">
+
+                        <div class="toast-body">
+                            🎉 Message sent successfully! We will contact you soon.
+                        </div>
+
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                            data-bs-dismiss="toast"></button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT INFO -->
+            <div class="col-lg-5">
+
+                <div class="p-4 rounded-4 shadow-sm bg-white border h-100 contact-card">
+
+                    <h3 class="section-title mb-4">
+                        Contact Information
+                    </h3>
+
+                    <div class="mb-3 d-flex align-items-center">
+                        <div class="icon-badge me-3">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Location</strong><br>
+                            <span class="text-muted">Chennai, Tamil Nadu, India</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 d-flex align-items-center">
+                        <div class="icon-badge me-3">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email</strong><br>
+                            <span class="text-muted">contact@ashuryatechnologies.com</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 d-flex align-items-center">
+                        <div class="icon-badge me-3">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <span class="text-muted">+91 84897 73792</span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h5 class="mt-3">Response Time</h5>
+                    <p class="text-muted">
+                        Usually within 24 hours for business inquiries.
+                    </p>
+
+                    <hr>
+
+                    <h5>What Happens Next?</h5>
+                    <ul class="text-muted ps-3">
+                        <li>We review your requirement</li>
+                        <li>We schedule a discussion</li>
+                        <li>We propose a solution</li>
+                        <li>We start building</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- CTA SECTION -->
+<section class="cta-section py-5 reveal">
+
+    <div class="container">
+
+        <div class="cta-box text-center">
+
+            <span class="section-tag text-white">
+                Let’s Work Together
+            </span>
+
+            <h2>
+                Your Idea Deserves to Be Built
+            </h2>
+
+            <p>
+                We help startups and businesses turn ideas into production-ready systems
+                using modern web, cloud, and DevOps technologies.
+            </p>
+
+            <div>
+
+                <a href="/services/" class="btn btn-light btn-lg me-3">
+                    Explore Services
+                </a>
+
+                <a href="/about/" class="btn btn-outline-light btn-lg">
+                    About Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 {% endblock %}
