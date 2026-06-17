@@ -547,3 +547,125 @@ body{
     opacity: 0.7;
     cursor: not-allowed;
 }
+
+.blog-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.blog-excerpt {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.read-more {
+    color: #2563eb;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.blog-back-btn {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.blog-back-btn:hover {
+    color: #1d4ed8;
+    transform: translateX(-3px);
+}
+
+.blog-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #374151;
+}
+
+.blog-body h2, .blog-body h3 {
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+.blog-detail-hero img {
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.pagination-wrapper .page-link {
+    color: #2563eb;
+    border-radius: 8px;
+    margin: 0 3px;
+}
+
+.pagination-wrapper .page-item.active .page-link {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+}
+
+.related-blogs {
+    background: #f9fafb;
+    border-top: 1px solid #030303;
+}
+
+
+.scroll-circle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    z-index: 9999;
+
+    opacity: 1 ;
+    visibility: visible;
+
+    transition: all 0.3s ease;
+}
+
+/* show state */
+.scroll-circle.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-circle:hover {
+    transform: scale(1.1);
+}
