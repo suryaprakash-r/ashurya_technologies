@@ -1,4 +1,6 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+
 
 
 class Tag(models.Model):
@@ -15,6 +17,7 @@ class Blog(models.Model):
     slug = models.SlugField(unique=True)
 
     image = models.ImageField(upload_to='blogs/')
+    content = RichTextField()
 
     excerpt = models.TextField(
         help_text="Short summary displayed in blog cards"

@@ -1,0 +1,133 @@
+{% extends 'dashboard/base_dashboard.html' %}
+
+{% block title %}
+Projects
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    Project Management
+</h2>
+
+<form method="GET" class="row mb-4">
+
+    <div class="col-md-4">
+
+        <input type="text" name="search" class="form-control" placeholder="Search Project" value="{{ search }}">
+
+    </div>
+
+    <div class="col-md-3">
+
+        <select name="status" class="form-control">
+
+            <option value="">
+                All Status
+            </option>
+
+            <option value="planning">
+                Planning
+            </option>
+
+            <option value="development">
+                Development
+            </option>
+
+            <option value="testing">
+                Testing
+            </option>
+
+            <option value="deployment">
+                Deployment
+            </option>
+
+            <option value="completed">
+                Completed
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="col-md-2">
+
+        <button class="btn btn-primary">
+
+            Filter
+
+        </button>
+
+    </div>
+
+</form>
+
+<div class="card p-3">
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+
+                <th>Project</th>
+                <th>Client</th>
+                <th>Status</th>
+                <th>Progress</th>
+                <th></th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for project in projects %}
+
+            <tr>
+
+                <td>
+                    {{ project.title }}
+                </td>
+
+                <td>
+                    {{ project.client_name }}
+                </td>
+
+                <td>
+                    {{ project.status }}
+                </td>
+
+                <td>
+                    <div class="progress mb-3">
+
+                        <div class="progress-bar" role="progressbar" style="width: {{ project.progress }}%;">
+
+                            {{ project.progress }}%
+
+                        </div>
+
+                    </div>
+                </td>
+
+                <td>
+
+                    <a href="{% url 'project_detail' project.id %}" class="btn btn-primary btn-sm">
+
+                        View
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

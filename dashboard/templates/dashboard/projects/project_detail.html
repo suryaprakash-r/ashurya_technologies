@@ -1,0 +1,124 @@
+{% extends 'dashboard/base_dashboard.html' %}
+
+{% block title %}
+Project Detail
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+    {{ project.title }}
+
+</h2>
+
+<div class="card p-4 mb-4">
+
+    <p>
+        <strong>Client:</strong>
+        {{ project.client_name }}
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        {{ project.client_email }}
+    </p>
+
+    <p>
+        <strong>Start Date:</strong>
+        {{ project.start_date }}
+    </p>
+
+    <p>
+        <strong>Delivery Date:</strong>
+        {{ project.delivery_date }}
+    </p>
+
+    <p>
+        <strong>Technologies:</strong>
+        {{ project.technologies }}
+    </p>
+
+</div>
+
+<div class="card p-4">
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="mb-3">
+
+            <label>
+                Status
+            </label>
+
+            <select
+                name="status"
+                class="form-control">
+
+                <option value="planning">
+                    Planning
+                </option>
+
+                <option value="development">
+                    Development
+                </option>
+
+                <option value="testing">
+                    Testing
+                </option>
+
+                <option value="deployment">
+                    Deployment
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label>
+                Progress
+            </label>
+
+            <input
+                type="number"
+                name="progress"
+                min="0"
+                max="100"
+                value="{{ project.progress }}"
+                class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label>
+                Internal Notes
+            </label>
+
+            <textarea
+                name="internal_notes"
+                rows="6"
+                class="form-control">{{ project.internal_notes }}</textarea>
+
+        </div>
+
+        <button
+            class="btn btn-success">
+
+            Save Changes
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

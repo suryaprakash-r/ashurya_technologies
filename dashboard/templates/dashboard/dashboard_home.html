@@ -1,0 +1,204 @@
+{% extends 'dashboard/base_dashboard.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+    Dashboard Overview
+
+</h2>
+
+<div class="row">
+
+    <div class="col-md-3">
+
+        <div class="card dashboard-card">
+
+            <h3>
+
+                {{ total_blogs }}
+
+            </h3>
+
+            <p>
+
+                Blogs
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card dashboard-card">
+
+            <h3>
+
+                {{ total_projects }}
+
+            </h3>
+
+            <p>
+
+                Projects
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card dashboard-card">
+
+            <h3>
+
+                {{ total_testimonials }}
+
+            </h3>
+
+            <p>
+
+                Testimonials
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card dashboard-card">
+
+            <h3>
+
+                {{ total_leads }}
+
+            </h3>
+
+            <p>
+
+                Leads
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="row mt-4">
+
+    <div class="col-lg-6">
+
+        <div class="card p-3">
+
+            <h4>
+
+                Recent Leads
+
+            </h4>
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Service</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for lead in recent_leads %}
+
+                    <tr>
+
+                        <td>
+
+                            {{ lead.name }}
+
+                        </td>
+
+                        <td>
+
+                            {{ lead.service }}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <div class="card p-3">
+
+            <h4>
+
+                Recent Blogs
+
+            </h4>
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Title</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for blog in recent_blogs %}
+
+                    <tr>
+
+                        <td>
+
+                            {{ blog.title }}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

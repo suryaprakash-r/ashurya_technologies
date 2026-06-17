@@ -30,6 +30,7 @@ urlpatterns = [
     path('portfolio/', include('portfolio.urls')),
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
+    path('admin-dashboard/', include('dashboard.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(

@@ -1,0 +1,41 @@
+body{
+    background:#f8fafc;
+}
+
+.sidebar{
+    width:260px;
+    min-height:100vh;
+    background:#111827;
+    color:white;
+    padding:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:15px;
+    padding:12px;
+    border-radius:10px;
+}
+
+.sidebar a:hover{
+    background:#2563eb;
+}
+
+.content{
+    flex:1;
+    padding:30px;
+}
+
+.dashboard-card{
+    padding:25px;
+    border:none;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.dashboard-card h3{
+    color:#2563eb;
+    font-weight:700;
+}

@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Services | Ashurya Technologies
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+
+<section class="services-hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-6">
+
+                <span class="hero-tag">
+                    Our Services
+                </span>
+
+                <h1 class="hero-title">
+                    Technology Solutions
+                    Built For Growth
+                </h1>
+
+                <p class="hero-description">
+
+                    We help businesses transform ideas
+                    into powerful digital products through
+                    websites, applications, automation,
+                    AI solutions, and business software.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#services"
+                       class="btn btn-primary btn-lg">
+
+                        Explore Services
+
+                    </a>
+
+                    <a href="/contact/"
+                       class="btn btn-outline-dark btn-lg">
+
+                        Get Free Consultation
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692"
+                    class="img-fluid rounded-4 shadow"
+                    alt="Services">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Services Grid -->
+
+<section class="services-grid-section py-5 reveal"
+         id="services">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                What We Offer
+            </span>
+
+            <h2 class="section-title">
+                Our Services
+            </h2>
+
+            <p class="section-description">
+
+                Comprehensive technology solutions
+                tailored to your business needs.
+
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            {% for service in services %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="service-detail-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi {{ service.icon }}"></i>
+
+                    </div>
+
+                    <h4>
+                        {{ service.title }}
+                    </h4>
+
+                    <p>
+                        {{ service.short_description }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Why Choose Our Services -->
+
+<section class="service-benefits py-5 reveal">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                Why Choose Us
+            </span>
+
+            <h2 class="section-title">
+                Why Businesses Trust Ashurya
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="benefit-card">
+
+                    <i class="bi bi-lightning-charge"></i>
+
+                    <h5>Fast Delivery</h5>
+
+                    <p>
+                        Efficient workflows and
+                        timely project completion.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="benefit-card">
+
+                    <i class="bi bi-cpu"></i>
+
+                    <h5>Modern Technology</h5>
+
+                    <p>
+                        Latest frameworks and
+                        development practices.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="benefit-card">
+
+                    <i class="bi bi-gear"></i>
+
+                    <h5>Custom Solutions</h5>
+
+                    <p>
+                        Tailored services for
+                        every business need.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="benefit-card">
+
+                    <i class="bi bi-headset"></i>
+
+                    <h5>Dedicated Support</h5>
+
+                    <p>
+                        Ongoing support and
+                        maintenance assistance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Development Process -->
+
+<section class="service-process py-5 reveal">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                Process
+            </span>
+
+            <h2 class="section-title">
+                How We Work
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="process-card">
+
+                    <span class="process-number">01</span>
+
+                    <h5>Discovery</h5>
+
+                    <p>
+                        Understanding requirements
+                        and business goals.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="process-card">
+
+                    <span class="process-number">02</span>
+
+                    <h5>Planning</h5>
+
+                    <p>
+                        Defining architecture,
+                        design, and roadmap.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="process-card">
+
+                    <span class="process-number">03</span>
+
+                    <h5>Development</h5>
+
+                    <p>
+                        Building reliable and
+                        scalable solutions.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="process-card">
+
+                    <span class="process-number">04</span>
+
+                    <h5>Deployment</h5>
+
+                    <p>
+                        Testing, launch, and
+                        ongoing support.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section reveal">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Ready To Start Your Project?
+            </h2>
+
+            <p>
+                Let's discuss your ideas and
+                build something amazing together.
+            </p>
+
+            <a href="/contact/"
+               class="btn btn-light btn-lg">
+
+                Contact Us
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<button id="scrollTopBtn" class="scroll-circle">
+    <i class="bi bi-arrow-up"></i>
+</button>
+{% endblock %}

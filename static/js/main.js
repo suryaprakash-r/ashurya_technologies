@@ -25,43 +25,113 @@ document.querySelectorAll(".reveal").forEach((el) => {
 const form = document.getElementById("contactForm");
 
 if (form) {
-  const submitBtn = document.getElementById("submitBtn");
-  const btnText = document.getElementById("btnText");
-  const btnSpinner = document.getElementById("btnSpinner");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    const submitBtn =
+        document.getElementById("submitBtn");
 
-    submitBtn.disabled = true;
-    btnText.innerText = "Sending...";
-    btnSpinner.classList.remove("d-none");
+    const btnText =
+        document.getElementById("btnText");
 
-    let formData = new FormData(this);
+    const btnSpinner =
+        document.getElementById("btnSpinner");
 
-    fetch("", {
-      method: "POST",
-      body: formData,
-      headers: {
-        "X-Requested-With": "XMLHttpRequest",
-      },
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === "success") {
-          new bootstrap.Toast(
-            document.getElementById("successToast")
-          ).show();
+    form.addEventListener(
+        "submit",
+        function (e) {
 
-          form.reset();
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+
+            btnText.innerText =
+                "Sending Message...";
+
+            btnSpinner.classList.remove(
+                "d-none"
+            );
+
+            const formData =
+                new FormData(this);
+
+            fetch("", {
+
+                method: "POST",
+
+                body: formData,
+
+                headers: {
+                    "X-Requested-With":
+                        "XMLHttpRequest",
+
+                    "X-CSRFToken":
+                        document.querySelector(
+                            "[name=csrfmiddlewaretoken]"
+                        ).value
+                }
+
+            })
+
+            .then((response) => {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Request Failed"
+                    );
+                }
+
+                return response.json();
+
+            })
+
+            .then((data) => {
+
+                if (
+                    data.status ===
+                    "success"
+                ) {
+
+                    new bootstrap.Toast(
+                        document.getElementById(
+                            "successToast"
+                        )
+                    ).show();
+
+                    form.reset();
+
+                }
+
+            })
+
+            .catch((error) => {
+
+                console.error(error);
+
+                new bootstrap.Toast(
+                    document.getElementById(
+                        "errorToast"
+                    )
+                ).show();
+
+            })
+
+            .finally(() => {
+
+                submitBtn.disabled =
+                    false;
+
+                btnText.innerText =
+                    "Send Message";
+
+                btnSpinner.classList.add(
+                    "d-none"
+                );
+
+            });
+
         }
-      })
-      .catch(err => console.error(err))
-      .finally(() => {
-        submitBtn.disabled = false;
-        btnText.innerText = "Send Message";
-        btnSpinner.classList.add("d-none");
-      });
-  });
+    );
+
 }
 
 const commentForm = document.getElementById("commentForm");

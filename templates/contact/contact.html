@@ -91,6 +91,7 @@ Contact | Ashurya Technologies
                     <h3 class="section-title mb-3">
                         Send Us a Message
                     </h3>
+                    <div id="formMessage"></div>
 
                     <p class="text-muted mb-4">
                         Fill out the form and we’ll get back to you within 24 hours.
@@ -107,13 +108,20 @@ Contact | Ashurya Technologies
                             </div>
 
                             <div class="col-md-6">
+
+                                <input type="text" name="company_name" class="form-control custom-input"
+                                    placeholder="Company Name (Optional)">
+
+                            </div>
+
+                            <div class="col-md-6">
                                 <input type="email" name="email" class="form-control custom-input"
                                     placeholder="Your Email" required>
                             </div>
 
                             <div class="col-md-6">
-                                <input type="number" name="phone" class="form-control custom-input"
-                                    placeholder="Phone Number" pattern="[0-9]{10}" required>
+                                <input type="tel" name="phone" class="form-control custom-input"
+                                    placeholder="Phone Number" required>
                             </div>
 
                             <div class="col-md-6">
@@ -167,6 +175,21 @@ Contact | Ashurya Technologies
                     </div>
 
                 </div>
+                <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert">
+
+                    <div class="d-flex">
+
+                        <div class="toast-body">
+                            Something went wrong.
+                            Please try again later.
+                        </div>
+
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast">
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -213,9 +236,48 @@ Contact | Ashurya Technologies
                     <hr>
 
                     <h5 class="mt-3">Response Time</h5>
-                    <p class="text-muted">
+                    <div class="row text-center mt-4">
+
+                        <div class="col-4">
+
+                            <h4 class="text-primary">
+                                24h
+                            </h4>
+
+                            <small>
+                                Response
+                            </small>
+
+                        </div>
+
+                        <div class="col-4">
+
+                            <h4 class="text-primary">
+                                15+
+                            </h4>
+
+                            <small>
+                                Projects
+                            </small>
+
+                        </div>
+
+                        <div class="col-4">
+
+                            <h4 class="text-primary">
+                                100%
+                            </h4>
+
+                            <small>
+                                Support
+                            </small>
+
+                        </div>
+
+                    </div>
+                    <!-- <p class="text-muted">
                         Usually within 24 hours for business inquiries.
-                    </p>
+                    </p> -->
 
                     <hr>
 
@@ -226,6 +288,39 @@ Contact | Ashurya Technologies
                         <li>We propose a solution</li>
                         <li>We start building</li>
                     </ul>
+                    <hr>
+
+                    <h5 class="mb-3">
+                        Connect With Us
+                    </h5>
+
+                    <div class="social-links">
+
+                        <a href="https://linkedin.com" target="_blank">
+
+                            <i class="bi bi-linkedin"></i>
+
+                        </a>
+
+                        <a href="https://github.com" target="_blank">
+
+                            <i class="bi bi-github"></i>
+
+                        </a>
+
+                        <a href="https://youtube.com" target="_blank">
+
+                            <i class="bi bi-youtube"></i>
+
+                        </a>
+
+                        <a href="https://instagram.com" target="_blank">
+
+                            <i class="bi bi-instagram"></i>
+
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -276,5 +371,7 @@ Contact | Ashurya Technologies
     </div>
 
 </section>
-
+<button id="scrollTopBtn" class="scroll-circle">
+    <i class="bi bi-arrow-up"></i>
+</button>
 {% endblock %}

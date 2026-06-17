@@ -14,7 +14,13 @@ class Testimonial(models.Model):
         upload_to='testimonials/',
         blank=True
     )
+    rating = models.IntegerField(
+        default=5
+    )
 
+    featured = models.BooleanField(
+        default=True
+    )
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
