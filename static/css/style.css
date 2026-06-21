@@ -874,6 +874,7 @@ div,
   font-size: 15px;
   transition: 0.3s;
   background: #fff;
+  width: 100%;
 }
 
 .custom-input:focus {
@@ -1598,13 +1599,13 @@ div,
 
 .dark-mode .project-info-section,
 .dark-mode .timeline-section {
-    background: #020617 !important;
+    background: var(--bg-color) !important;
 }
 
 /* Technology Section */
 
 .dark-mode .technology-section {
-    background: #020617 !important;
+    background:var(--bg-color) !important;
 }
 
 /* Info Cards */
