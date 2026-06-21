@@ -1,7 +1,7 @@
 # 🚀 Ashurya Technologies
 
 <p align="center">
-  <img src="https://your-logo-url.com/logo.png" width="180">
+  <img src="https://your-logo-url.com/logo.png" width="180" alt="Ashurya Technologies Logo">
 </p>
 
 <p align="center">
