@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog',
     'contact',
     'dashboard',
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -104,7 +105,29 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+CKEDITOR_5_CONFIGS = {
+    'extends': {
+        'toolbar': [
+            'heading',
+            '|',
+            'bold',
+            'italic',
+            'underline',
+            'link',
+            '|',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'insertTable',
+            '|',
+            'blockQuote',
+            'codeBlock',
+            '|',
+            'undo',
+            'redo'
+        ]
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 

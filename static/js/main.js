@@ -200,3 +200,62 @@ function initScrollTopButton() {
     });
   });
 }
+
+
+// const themeToggle = document.getElementById("themeToggle");
+
+// if (themeToggle) {
+//     const currentTheme = localStorage.getItem("theme");
+
+//     if (currentTheme === "dark") {
+//         document.body.classList.add("dark-mode");
+//     }
+
+//     themeToggle.addEventListener("click", () => {
+//         document.body.classList.toggle("dark-mode");
+
+//         if (document.body.classList.contains("dark-mode")) {
+//             localStorage.setItem("theme", "dark");
+//         } else {
+//             localStorage.setItem("theme", "light");
+//         }
+//     });
+// }
+
+// const icon = themeToggle.querySelector("i");
+
+// if (document.body.classList.contains("dark-mode")) {
+//     icon.classList.remove("bi-moon-stars-fill");
+//     icon.classList.add("bi-sun-fill");
+// }
+
+// themeToggle.addEventListener("click", () => {
+//     icon.classList.toggle("bi-moon-stars-fill");
+//     icon.classList.toggle("bi-sun-fill");
+// });
+
+const themeBtn = document.getElementById("themeToggle");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+  themeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+}
+
+themeBtn.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark-mode");
+
+  const isDark =
+    document.body.classList.contains("dark-mode");
+
+  localStorage.setItem(
+    "theme",
+    isDark ? "dark" : "light"
+  );
+
+  themeBtn.innerHTML = isDark
+    ? '<i class="bi bi-sun-fill"></i>'
+    : '<i class="bi bi-moon-stars-fill"></i>';
+});

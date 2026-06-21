@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 
@@ -17,13 +17,17 @@ class Blog(models.Model):
     slug = models.SlugField(unique=True)
 
     image = models.ImageField(upload_to='blogs/')
-    content = RichTextField()
+    
+    content = CKEditor5Field(
+        'Blog Description',
+        config_name='extends'
+    )
 
     excerpt = models.TextField(
         help_text="Short summary displayed in blog cards"
     )
 
-    content = models.TextField()
+    # content = models.TextField()
 
     featured = models.BooleanField(default=False)
 

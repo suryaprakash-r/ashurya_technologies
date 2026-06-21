@@ -35,15 +35,13 @@ Portfolio | Ashurya Technologies
 
                 <div class="hero-buttons">
 
-                    <a href="#projects"
-                       class="btn btn-primary btn-lg">
+                    <a href="#projects" class="btn btn-primary btn-lg">
 
                         Explore Projects
 
                     </a>
 
-                    <a href="/contact/"
-                       class="btn btn-outline-dark btn-lg">
+                    <a href="/contact/" class="btn btn-outline-dark btn-lg">
 
                         Start Your Project
 
@@ -55,10 +53,8 @@ Portfolio | Ashurya Technologies
 
             <div class="col-lg-6 text-center">
 
-                <img
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
-                    class="img-fluid rounded-4 shadow"
-                    alt="Portfolio">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                    class="img-fluid rounded-4 shadow" alt="Portfolio">
 
             </div>
 
@@ -104,9 +100,7 @@ Portfolio | Ashurya Technologies
 
                 <div class="project-card">
 
-                    <img src="{{ project.image.url }}"
-                         class="project-image"
-                         alt="{{ project.title }}">
+                    <img src="{{ project.image.url }}" class="project-image" alt="{{ project.title }}">
 
                     <div class="project-content">
 
@@ -121,6 +115,11 @@ Portfolio | Ashurya Technologies
                         <div class="project-tech">
                             {{ project.technologies }}
                         </div>
+                        <a href="{% url 'project_detail' project.slug %}" class="btn btn-outline-primary mt-3">
+
+                            View Details
+
+                        </a>
 
                     </div>
 
@@ -141,8 +140,7 @@ Portfolio | Ashurya Technologies
 
 <!-- All Projects -->
 
-<section class="all-projects py-5 reveal"
-         id="projects">
+<section class="all-projects py-5 reveal" id="projects">
 
     <div class="container">
 
@@ -173,9 +171,7 @@ Portfolio | Ashurya Technologies
 
                 <div class="project-card">
 
-                    <img src="{{ project.image.url }}"
-                         class="project-image"
-                         alt="{{ project.title }}">
+                    <img src="{{ project.image.url }}" class="project-image" alt="{{ project.title }}">
 
                     <div class="project-content">
 
@@ -191,13 +187,17 @@ Portfolio | Ashurya Technologies
                             {{ project.technologies }}
                         </div>
 
-                        <div class="d-flex gap-2">
+                        <div class="project-buttons">
+
+                            <a href="{% url 'project_detail' project.slug %}" class="btn btn-outline-primary btn-sm">
+
+                                View Details
+
+                            </a>
 
                             {% if project.live_url %}
 
-                            <a href="{{ project.live_url }}"
-                               target="_blank"
-                               class="btn btn-primary btn-sm">
+                            <a href="{{ project.live_url }}" target="_blank" class="btn btn-primary btn-sm">
 
                                 Live Demo
 
@@ -207,9 +207,7 @@ Portfolio | Ashurya Technologies
 
                             {% if project.github_url %}
 
-                            <a href="{{ project.github_url }}"
-                               target="_blank"
-                               class="btn btn-outline-dark btn-sm">
+                            <a href="{{ project.github_url }}" target="_blank" class="btn btn-outline-dark btn-sm">
 
                                 GitHub
 
@@ -323,8 +321,7 @@ Portfolio | Ashurya Technologies
                 powerful digital solutions.
             </p>
 
-            <a href="/contact/"
-               class="btn btn-light btn-lg">
+            <a href="/contact/" class="btn btn-light btn-lg">
 
                 Contact Us
 

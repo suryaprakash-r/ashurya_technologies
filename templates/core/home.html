@@ -6,7 +6,7 @@ Ashurya Technologies
 
 {% block content %}
 
-<section class="hero-section" >
+<section class="hero-section">
 
     <div class="container">
 
@@ -262,8 +262,10 @@ Ashurya Technologies
                             {{ project.technologies }}
                         </div>
 
-                        <a href="#" class="btn btn-outline-primary mt-3">
+                        <a href="{% url 'project_detail' project.slug %}" class="btn btn-outline-primary mt-3">
+
                             View Details
+
                         </a>
 
                     </div>
@@ -365,27 +367,22 @@ Ashurya Technologies
 
             <div class="col-lg-4 col-md-6 mb-4">
 
-                <div class="blog-card">
+                <div class="blog-card h-100">
 
-                    <img
-                        src="{{ blog.image.url }}"
-                        class="img-fluid blog-image"
-                        alt="{{ blog.title }}">
+                    <img src="{{ blog.image.url }}" class="img-fluid rounded-top" alt="{{ blog.title }}">
 
-                    <div class="blog-content">
+                    <div class="p-3">
 
-                        <h4>
+                        <h5 class="blog-title">
                             {{ blog.title }}
-                        </h4>
+                        </h5>
 
-                        <p>
-                            {{ blog.excerpt|truncatewords:20 }}
+                        <p class="blog-excerpt">
+                            {{ blog.excerpt|truncatechars:120 }}
                         </p>
 
-                        <a href="#"
-                           class="read-more">
-                            Read More
-                            <i class="bi bi-arrow-right"></i>
+                        <a href="{% url 'blog_detail' blog.slug %}" class="read-more">
+                            Read More →
                         </a>
 
                     </div>
@@ -400,8 +397,7 @@ Ashurya Technologies
 
         <div class="text-center mt-4">
 
-            <a href="/blog/"
-               class="btn btn-outline-primary">
+            <a href="/blog/" class="btn btn-outline-primary">
                 View All Blogs
             </a>
 
@@ -427,13 +423,11 @@ Ashurya Technologies
 
             <div class="mt-4">
 
-                <a href="/contact/"
-                   class="btn btn-light btn-lg me-2">
+                <a href="/contact/" class="btn btn-light btn-lg me-2">
                     Start Your Project
                 </a>
 
-                <a href="/contact/"
-                   class="btn btn-outline-light btn-lg">
+                <a href="/contact/" class="btn btn-outline-light btn-lg">
                     Contact Us
                 </a>
 

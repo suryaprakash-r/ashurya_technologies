@@ -1,8 +1,17 @@
-# portfolio/urls.py
-
 from django.urls import path
-from .views import portfolio
+
+from . import views
 
 urlpatterns = [
-    path('', portfolio, name='portfolio'),
+    path(
+        '',
+        views.portfolio_list,
+        name='portfolio'
+    ),
+
+    path(
+        '<slug:slug>/',
+        views.project_detail,
+        name='project_detail'
+    ),
 ]

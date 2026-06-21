@@ -31,6 +31,10 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('admin-dashboard/', include('dashboard.urls')),
+    path(
+        "ckeditor5/",
+        include("django_ckeditor_5.urls")
+    ),
 ]
 if settings.DEBUG:
     urlpatterns += static(

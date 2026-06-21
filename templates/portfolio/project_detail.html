@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 
+{% block title %}
+{{ project.title }} | Ashurya Technologies
+{% endblock %}
+
 {% block content %}
-<section class="portfolio-hero-section">
+
+<!-- HERO -->
+
+<section class="project-detail-hero py-5">
 
     <div class="container">
 
@@ -10,31 +17,49 @@
             <div class="col-lg-6">
 
                 <span class="hero-tag">
-                    Our Portfolio
+                    Project Case Study
                 </span>
 
                 <h1 class="hero-title">
-                    Showcasing Innovation
-                    Through Technology
+                    {{ project.title }}
                 </h1>
 
                 <p class="hero-description">
-
-                    Explore a collection of websites,
-                    web applications, business software,
-                    and digital solutions developed by
-                    Ashurya Technologies.
-
+                    {{ project.short_description }}
                 </p>
+
+                <div class="mt-4 d-flex flex-wrap gap-2">
+
+                    {% if project.live_url %}
+                    <a href="{{ project.live_url }}"
+                       target="_blank"
+                       class="btn btn-primary">
+
+                        Live Demo
+
+                    </a>
+                    {% endif %}
+
+                    {% if project.github_url %}
+                    <a href="{{ project.github_url }}"
+                       target="_blank"
+                       class="btn btn-outline-dark">
+
+                        GitHub
+
+                    </a>
+                    {% endif %}
+
+                </div>
 
             </div>
 
             <div class="col-lg-6 text-center">
 
                 <img
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
-                    class="img-fluid rounded-4 shadow"
-                    alt="Portfolio">
+                    src="{{ project.image.url }}"
+                    class="img-fluid rounded-4 shadow-lg"
+                    alt="{{ project.title }}">
 
             </div>
 
@@ -43,7 +68,299 @@
     </div>
 
 </section>
-<button id="scrollTopBtn" class="scroll-circle">
-    <i class="bi bi-arrow-up"></i>
-</button>
+
+
+<!-- PROJECT OVERVIEW -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                Overview
+            </span>
+
+            <h2 class="section-title">
+                About This Project
+            </h2>
+
+        </div>
+
+        <div class="project-description">
+
+            {{ project.description|safe }}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECT INFORMATION -->
+
+<section class="project-info-section py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+
+                <div class="info-card">
+
+                    <h6>Project Type</h6>
+
+                    <p>
+                        {{ project.project_type|default:"Custom Software" }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="info-card">
+
+                    <h6>Status</h6>
+
+                    <p>
+                        {{ project.get_status_display }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="info-card">
+
+                    <h6>Progress</h6>
+
+                    <p>
+                        {{ project.progress }}%
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="info-card">
+
+                    <h6>Client</h6>
+
+                    <p>
+                        {{ project.client_name|default:"Confidential" }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TECHNOLOGIES -->
+
+<section class="technology-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                Technology Stack
+            </span>
+
+            <h2 class="section-title">
+                Technologies Used
+            </h2>
+
+        </div>
+
+        <div class="tech-box">
+
+            {{ project.technologies }}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TIMELINE -->
+
+<section class="timeline-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                Timeline
+            </span>
+
+            <h2 class="section-title">
+                Project Journey
+            </h2>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div class="timeline-card">
+
+                    <h5>Started</h5>
+
+                    <p>
+                        {{ project.start_date|date:"d M Y" }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="timeline-card">
+
+                    <h5>Completion</h5>
+
+                    <p>
+                        {{ project.completion_date|date:"d M Y" }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="timeline-card">
+
+                    <h5>Delivery</h5>
+
+                    <p>
+                        {{ project.delivery_date|date:"d M Y" }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RELATED PROJECTS -->
+
+{% if related_projects %}
+
+<section class="featured-projects py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                More Projects
+            </span>
+
+            <h2 class="section-title">
+                Related Work
+            </h2>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            {% for item in related_projects %}
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="project-card">
+
+                    <img src="{{ item.image.url }}"
+                         class="project-image"
+                         alt="{{ item.title }}">
+
+                    <div class="project-content">
+
+                        <h4>
+                            {{ item.title }}
+                        </h4>
+
+                        <p>
+                            {{ item.short_description }}
+                        </p>
+
+                        <a href="{% url 'project_detail' item.slug %}"
+                           class="btn btn-outline-primary">
+
+                            View Details
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box text-center">
+
+            <h2>
+                Ready To Build Something Similar?
+            </h2>
+
+            <p>
+                Let Ashurya Technologies transform your idea into a scalable digital solution.
+            </p>
+
+            <a href="/contact/"
+               class="btn btn-light btn-lg">
+
+                Start Your Project
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
 {% endblock %}
