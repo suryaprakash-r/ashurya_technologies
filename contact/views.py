@@ -4,12 +4,13 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import Contact
 
 logger = logging.getLogger(__name__)
 
-
+@csrf_exempt
 def contact_view(request):
 
     if request.method == "POST":

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h77uewm_2#5+ln$!0$5__dtjzx=wxg&s_29a5t3#@h-f%zsm23'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "ashurya-technologies.onrender.com",
@@ -148,7 +148,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
@@ -156,7 +156,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 ADMIN_SITE_HEADER = "Ashurya Technologies Administration"
@@ -172,8 +172,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "r.suryaprakash0800@gmail.com"
 EMAIL_HOST_PASSWORD = "ensl xwdo jpvp lpqr"
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://ashurya-technologies.onrender.com",
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://ashurya-technologies.onrender.com",
+# ]
